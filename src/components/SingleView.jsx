@@ -9,7 +9,11 @@ const SingleView = (props) => {
     <>
       {item && (
         <dialog open>
-          <img src={item.filename} alt={item.title} />
+          {item.media_type.includes('video') ? (
+            <video src={item.filename} controls></video>
+          ) : (
+            <img src={item.filename} alt={item.title} />
+          )}
           <h3>Title: {item.title}</h3>
           <p>{item.description}</p>
         </dialog>
