@@ -1,11 +1,10 @@
-
 import './App.css';
-import Greeting from './Greeting';
+import Home from './components/home';
 const App = () => {
   return (
     <>
       <h1>My App</h1>
-      <Greeting name="Onni"/>
+      <Home></Home>
     </>
   );
 };
