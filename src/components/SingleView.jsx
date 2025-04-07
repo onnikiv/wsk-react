@@ -1,5 +1,9 @@
 const SingleView = (props) => {
   const {item, setSelectedItem} = props;
+
+  const handleClick = () => {
+    setSelectedItem(null);
+  };
   return (
     // TODO: Add JSX for displaying a mediafile here
     // - use e.g. a <dialog> element for creating a modal
@@ -9,6 +13,7 @@ const SingleView = (props) => {
     <>
       {item && (
         <dialog open>
+          <button onClick={handleClick}>&#10005;</button>
           {item.media_type.includes('video') ? (
             <video src={item.filename} controls></video>
           ) : (
