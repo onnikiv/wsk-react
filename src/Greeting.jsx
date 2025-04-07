@@ -4,6 +4,7 @@ const Greeting = (props) => {
     <>
       <h4>Moi, {props.name}</h4>
       <p>Jau</p>
+      <button onClick={() => alert('clicked')}>PLÖR</button>
     </>
   );
 };
