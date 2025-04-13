@@ -23,6 +23,7 @@ const SingleView = (props) => {
           )}
           <h3>Title: {item.title}</h3>
           <p>{item.description}</p>
+          <td>Owner: {item.username}</td>
         </dialog>
       )}
     </>
