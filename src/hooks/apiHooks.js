@@ -57,9 +57,15 @@ const useAuthentication = () => {
       import.meta.env.VITE_AUTH_API + '/auth/login',
       fetchOptions,
     );
+
+    console.log('loginResult', loginResult.token);
+
+    window.localStorage.setItem('token', loginResult.token);
+
     return loginResult;
   };
-  return postLogin;
+
+  return {postLogin};
 };
 
-export default {useMedia, useAuthentication};
+export {useMedia, useAuthentication};

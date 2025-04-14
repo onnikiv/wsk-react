@@ -1,18 +1,23 @@
+import {useAuthentication} from '../hooks/apiHooks';
 import useForm from '../hooks/formHooks';
-import useAuthentication from '../hooks/apiHooks';
+import {useNavigate} from 'react-router';
 
+// LoginForm.jsx
 const LoginForm = () => {
   const {postLogin} = useAuthentication();
+  const navigate = useNavigate();
 
   const initValues = {
     username: '',
     password: '',
   };
 
-  const doLogin = () => {
+  const doLogin = async () => {
+    console.log('login funktiota kutsuttu');
     console.log(inputs);
     // TODO: add login functionalities here
-    postLogin(inputs);
+    await postLogin(inputs);
+    navigate('/');
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
@@ -24,15 +29,15 @@ const LoginForm = () => {
   return (
     <>
       <h1>Login</h1>
-      <form onSubmit={() => {}}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="loginuser">Username</label>
           <input
-            name="username"
-            type="text"
-            id="loginuser"
             onChange={handleInputChange}
             autoComplete="username"
+            type="text"
+            id="loginuser"
+            name="username"
           />
         </div>
         <div>
@@ -41,7 +46,7 @@ const LoginForm = () => {
             name="password"
             type="password"
             id="loginpassword"
-            onChange={handleSubmit}
+            onChange={handleInputChange}
             autoComplete="current-password"
           />
         </div>
@@ -51,4 +56,4 @@ const LoginForm = () => {
   );
 };
 
-export {LoginForm};
+export default LoginForm;

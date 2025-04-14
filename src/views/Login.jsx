@@ -1,4 +1,4 @@
-import {LoginForm} from '../components/LoginForm';
+import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 
 const Login = () => {
@@ -10,4 +10,4 @@ const Login = () => {
   );
 };
 
-export {Login};
+export default Login;
