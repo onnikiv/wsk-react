@@ -1,6 +1,6 @@
 const Logout = () => {
   // TODO: implement
-  return null;
+  return <p>Logout page here</p>;
 };
 
 export default Logout;
