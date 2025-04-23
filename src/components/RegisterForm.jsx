@@ -1,7 +1,6 @@
 import {useUser} from '../hooks/apiHooks';
 import useForm from '../hooks/formHooks';
 
-// RegisterForm.jsx
 const RegisterForm = () => {
   const {postUser} = useUser();
 
