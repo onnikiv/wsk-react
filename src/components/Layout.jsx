@@ -2,8 +2,8 @@ import {Link, Outlet} from 'react-router';
 
 const Layout = () => {
   return (
-    <>
-      <div>
+    <div>
+      <header>
         <h1>My App</h1>
         <nav>
           <ul>
@@ -16,14 +16,16 @@ const Layout = () => {
             <li>
               <Link to="/upload">Upload</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </nav>
-        <main>
-          <Outlet />
-        </main>
-      </div>
-      ;
-    </>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 };
 
