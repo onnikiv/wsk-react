@@ -1,13 +1,24 @@
-import {Link} from 'react-router';
+import {Link, useNavigate} from 'react-router';
 import PropTypes from 'prop-types';
 import {useAuthentication} from '../hooks/apiHooks';
 
 const MediaRow = (props) => {
   const {isLoggedIn} = useAuthentication();
   const {item, setSelectedItem} = props;
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleClick = () => {
     setSelectedItem(item);
+  };
+
+  const handleEdit = () => {
+    console.log('edit button clicked');
+    navigate(0);
+  };
+
+  const handleDelete = () => {
+    console.log('delete button clicked');
+    navigate(0);
   };
 
   return (
@@ -46,18 +57,14 @@ const MediaRow = (props) => {
               <button
                 type="button"
                 className="bg-sky-400 text-black px-4 py-2 rounded-md hover:bg-sky-500"
-                onClick={() => {
-                  console.log('edit button clicked');
-                }}
+                onClick={handleEdit}
               >
                 Edit
               </button>
               <button
                 type="button"
                 className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
-                onClick={() => {
-                  console.log('delete button clicked');
-                }}
+                onClick={handleDelete}
               >
                 Delete
               </button>
