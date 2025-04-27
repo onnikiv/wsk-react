@@ -20,18 +20,23 @@ const Profile = () => {
 
   console.log('user', user);
   return (
-    <>
-      <h2>Profile</h2>
+    <div>
+      <h2 className="text-2xl font-bold mb-4">Profile</h2>
       {user && (
-        <>
-          <p>Username: {user.username}</p>
-          <p>Email: {user.email}</p>
-          <p>
-            Register Date: {new Date(user.created_at).toLocaleString('fi-FI')}
+        <div className="space-y-2">
+          <p className="text-lg">
+            <span className="font-semibold">Username:</span> {user.username}
           </p>
-        </>
+          <p className="text-lg">
+            <span className="font-semibold">Email:</span> {user.email}
+          </p>
+          <p className="text-lg">
+            <span className="font-semibold">Register Date:</span>{' '}
+            {new Date(user.created_at).toLocaleString('fi-FI')}
+          </p>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 

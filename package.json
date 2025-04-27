@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-lodash": "^0.1.2",
     "react-router": "^7.5.0",
+    "tailwindcss": "^4.1.4",
     "wsk-react": "file:"
   },
   "devDependencies": {
